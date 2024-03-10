@@ -17,7 +17,7 @@
     animation: my-animation 20s linear infinite;
     
 
-    /* text Properties */
+    /* text properties */
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-stretch: wider;
     font-size: 30px;
@@ -48,3 +48,8 @@
       transform: translateX(-100%);
     }
 }
+
+#view-height{
+  height: 100vh;
+}
+
