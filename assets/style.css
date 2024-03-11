@@ -56,7 +56,8 @@
 }
 
 header{
-  position: left;
+  position: fixed;
+  left: 0;
   height: 100vh;
   width: 50%;
   display: flex; 
