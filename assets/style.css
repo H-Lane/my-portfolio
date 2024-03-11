@@ -5,83 +5,106 @@ body {
 
 
 
-#scroll-container {
-    /* border: 3px solid rgb(80, 83, 94);
-    border-radius: 5px; */
-    overflow: hidden;
-    justify-content: left;
-    width: 100%;
-    height: min-content;
-    flex-wrap: wrap;
-    
-  }
-  
-  #scroll-text {
-    /* animation properties */
-    -moz-transform: translateX(100%);
-    -webkit-transform: translateX(100%);
-    transform: translateX(100%);
-    white-space: nowrap;
-    width: 100%;
-    
-    
-    -moz-animation: my-animation 20s linear infinite;
-    -webkit-animation: my-animation 20s linear infinite;
-    animation: my-animation 20s linear infinite;
-    
-
-    /* text properties */
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-stretch: wider;
-    font-size: 30px;
-    text-transform: capitalize;
-  }
-  
 
 
-  /* for Firefox */
-  @-moz-keyframes my-animation {
-    from { -moz-transform: translateX(100%); }
-    to { -moz-transform: translateX(-100%); }
-  }
+#border {
+  flex-direction: column;
+  /* border: 5px solid blue; */
+  height: 100vh;
+  width: 1px;
+  position: fixed;
+  /* background-color: blue; */
+  left: 49.5%;
+  z-index: 1;
   
-  /* for Chrome */
-  @-webkit-keyframes my-animation {
-    from { -webkit-transform: translateX(100%); }
-    to { -webkit-transform: translateX(-100%); }
-  }
-  
-  @keyframes my-animation {
-    from {
-      -moz-transform: translateX(100%);
-      -webkit-transform: translateX(100%);
-      transform: translateX(100%);
-    }
-    to {
-      -moz-transform: translateX(-100%);
-      -webkit-transform: translateX(-100%);
-      transform: translateX(-100%);
-    }
+}
+
+#border::before {
+  content: "";
+position: absolute;
+height: 100vh;
+top: 0;
+bottom: 0;
+left: -10px; /* Adjust this value to control the width of the blurred border */
+width: 10px; /* Adjust this value to control the width of the blurred border */
+backdrop-filter: blur(10px); /* Adjust this value to control the amount of blur */
+z-index: -1;
 }
 
 header{
   position: fixed;
   left: 0;
   height: 100vh;
-  width: 49%;
+  width: 50%;
   display: flex; 
   flex-direction: column; 
   
 }
 
-#background-color {
+#header-background-color {
   background-image: linear-gradient(to bottom right, darkblue, lightgray, skyblue);
   position: relative;
   height: 100vh;
   width: 100%;
+}
+
+#scroll-container {
+  /* border: 3px solid rgb(80, 83, 94);
+  border-radius: 5px; */
+  overflow: hidden;
+  justify-content: left;
+  width: 100%;
+  height: min-content;
+  flex-wrap: wrap;
   
+}
+
+#scroll-text {
+  /* animation properties */
+  -moz-transform: translateX(100%);
+  -webkit-transform: translateX(100%);
+  transform: translateX(100%);
+  white-space: nowrap;
+  width: 100%;
+  
+  
+  -moz-animation: my-animation 20s linear infinite;
+  -webkit-animation: my-animation 20s linear infinite;
+  animation: my-animation 20s linear infinite;
   
 
+  /* text properties */
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-stretch: wider;
+  font-size: 30px;
+  text-transform: capitalize;
+}
+
+
+
+/* for Firefox */
+@-moz-keyframes my-animation {
+  from { -moz-transform: translateX(100%); }
+  to { -moz-transform: translateX(-100%); }
+}
+
+/* for Chrome */
+@-webkit-keyframes my-animation {
+  from { -webkit-transform: translateX(100%); }
+  to { -webkit-transform: translateX(-100%); }
+}
+
+@keyframes my-animation {
+  from {
+    -moz-transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+  }
+  to {
+    -moz-transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+  }
 }
 
 h1{
@@ -105,21 +128,26 @@ nav {
 
 
 
-#border {
-  flex-direction: column;
-  border: 5px solid black;
-  height: 100vh;
-  width: 1%;
-  position: fixed;
-  background-color: black;
-  left: 48%;
-}
+
 
 aside {
   position: absolute;
   display: flex;
   flex-direction: column;
-  left: 51%;
+  left: 50%;
+  
+}
+
+#aside-background-color {
+  background-image: linear-gradient(to bottom left, darkblue, lightgray, skyblue);
+  position: relative;
+  height: 100%;
+  width: 100%;
+  left: -10px;
+}
+
+aside main {
+  padding-left: 10px;
 }
 
 #horiseon {
